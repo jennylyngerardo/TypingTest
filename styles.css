@@ -1,0 +1,244 @@
+/* =====================================================
+   ROOT VARIABLES (COLOR THEME)
+===================================================== */
+:root {
+    --bg-main: #1b0b3a;          /* Dark purple background */
+    --bg-card: rgba(88, 58, 140, 0.35); /* Glass purple card */
+    --accent: #c4b5fd;           /* Lavender accent */
+    --text-main: #f5f3ff;        /* Main text color */
+    --muted: #d6ccff;            /* Muted text */
+    --success: #22c55e;          /* Correct typing */
+    --danger: #ef4444;           /* Wrong typing */
+  }
+  
+  /* =====================================================
+     GLOBAL RESET
+  ===================================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  /* =====================================================
+     PAGE BACKGROUND
+  ===================================================== */
+  body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background: radial-gradient(circle at top, #2a115e, #140726);
+    color: var(--text-main);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* =====================================================
+     MAIN CONTAINER (SCALED BIG)
+  ===================================================== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  
+  
+    /* SCALE EVERYTHING PROPORTIONALLY */
+    transform: scale(1.0);          /* ⬅️ Change if needed */
+    transform-origin: top center;
+  }
+  
+  /* =====================================================
+     PAGE TITLE
+  ===================================================== */
+  h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  /* =====================================================
+     TYPING TEST CARD
+  ===================================================== */
+  .card {
+    width: 100%;
+    min-height: 520px;
+  
+    padding: 3rem;
+    border-radius: 24px;
+  
+    background: var(--bg-card);
+    border: 2px solid rgba(200, 170, 255, 0.6);
+  
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* =====================================================
+     CONTROLS (TIME / START / RESTART)
+  ===================================================== */
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  
+    margin-bottom: 2rem;
+  }
+  
+  .controls label {
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  
+  /* Dropdown */
+  .controls select {
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+    border: none;
+  
+    background:  gray;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  /* Buttons */
+  .controls button {
+    padding: 0.6rem 1.4rem;
+    border-radius: 10px;
+    border: none;
+  
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    color: white;
+    font-size: 1rem;
+  
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    opacity: 0.9;
+  }
+  
+  /* =====================================================
+     TEXT TO TYPE (DISPLAY BOX)
+  ===================================================== */
+  .text-box {
+    min-height: 220px;
+    padding: 1.6rem;
+    margin-bottom: 1.5rem;
+  
+    font-size: 1.25rem;
+    line-height: 1.7;
+  
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+  
+    overflow-y: auto;
+  }
+  
+  /* Individual characters */
+  .char.untyped { opacity: 0.6; }
+  
+  .char.correct {
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.15);
+    border-radius: 4px;
+  }
+  
+  .char.incorrect {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 4px;
+  }
+  
+  .char.current {
+    outline: 2px solid var(--accent);
+  }
+  
+  /* =====================================================
+     TYPING INPUT AREA
+  ===================================================== */
+  #input {
+    width: 100%;
+    min-height: 180px;
+    padding: 1.4rem;
+  
+    font-size: 1.2rem;
+    line-height: 1.6;
+  
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+  
+    resize: vertical;
+    margin-bottom: 2rem;
+  }
+  
+  /* Disabled state */
+  #input:disabled {
+    opacity: 0.6;
+  }
+  
+  /* =====================================================
+     STATS SECTION
+  ===================================================== */
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .stats div {
+    flex: 1;
+    padding: 1.2rem;
+  
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+  
+    text-align: center;
+  }
+  
+  .stats strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  
+  .stats span {
+    display: block;
+    margin-top: 0.4rem;
+  
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* =====================================================
+     FOOTER
+  ===================================================== */
+  .footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  
+  /* =====================================================
+     RESPONSIVE ADJUSTMENTS
+  ===================================================== */
+  @media (max-width: 768px) {
+    .container {
+      transform: scale(1.1);
+    }
+  
+    .stats {
+      flex-wrap: wrap;
+    }
+  }
+  

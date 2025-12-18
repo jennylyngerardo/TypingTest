@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TYPING TEST</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>TYPING TEST</h1>
+
+    <section class="card">
+      <div class="controls">
+        <label for="time">Time (sec)</label>
+        <select id="time">
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="60" selected>60</option>
+          <option value="120">120</option>
+        </select>
+        <button id="restart">Restart</button>
+        <button id="restart">Start</button>
+      </div>
+
+      <div id="textToType" class="text-box" aria-live="polite"></div>
+
+      <textarea id="input" placeholder="Start typing here..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+
+      <div class="stats">
+        <div><strong>WPM</strong><span id="wpm">0</span></div>
+        <div><strong>Accuracy</strong><span id="accuracy">100%</span></div>
+        <div><strong>Errors</strong><span id="errors">0</span></div>
+        <div><strong>Time</strong><span id="timeLeft">60</span>s</div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+    
+    </footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
